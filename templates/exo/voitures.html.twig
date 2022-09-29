@@ -1,0 +1,15 @@
+<h1>{{ voiture }}</h1>
+
+<p>{{ desc }}</p>
+
+{% if prix > 1500 and voiture == "R5" %}
+
+	{{ prix }}€
+
+{% endif %}
+
+{% if desc ends with "cher" %}
+
+	<a href="https://www.ferrari.com/fr-FR">Voitures chères</a>
+
+{% endif %}

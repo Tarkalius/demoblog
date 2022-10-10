@@ -31,6 +31,13 @@
 						<a class="nav-link active" aria-current="page" href="{{ path('home') }}">Accueil</a>
 						<a class="nav-link" href="{{ path('app_blog') }}">Liste des articles</a>
 						<a class="nav-link" href="{{ path('blog_create') }}">Nouvel article</a>
+
+						{% if app.user %}
+							<a href="{{ path('app_logout') }}" class="nav-link">Déconnexion</a>
+						{% else %}
+							<a href="{{ path('app_login') }}" class="nav-link">Connexion</a>
+							<a href="{{ path('app_register') }}" class="nav-link">Création de compte</a>
+						{% endif %}
 					</div>
 				</div>
 			</div>

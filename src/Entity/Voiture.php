@@ -37,6 +37,12 @@ class Voiture
      */
     private $description;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Type::class, inversedBy="voitures")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $type;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +92,18 @@ class Voiture
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getType(): ?Type
+    {
+        return $this->type;
+    }
+
+    public function setType(?Type $type): self
+    {
+        $this->type = $type;
 
         return $this;
     }

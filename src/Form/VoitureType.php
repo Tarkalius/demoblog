@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Type;
 use App\Entity\Voiture;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -16,6 +18,10 @@ class VoitureType extends AbstractType
             ->add('modele')
             ->add('prix')
             ->add('description')
+            ->add('type', EntityType::class, [
+                'class' => Type::class,
+                'choice_label' => 'titre'
+            ])
         ;
     }
 
